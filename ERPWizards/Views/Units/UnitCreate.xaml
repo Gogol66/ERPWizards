@@ -1,0 +1,130 @@
+﻿<Page x:Class="ERPWizards.Views.Units.UnitCreate"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ERPWizards.Views.Units"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UnitCreate"  
+      Background="#F3F4F6"
+      >
+
+    <Grid Margin="10,10,10,63">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+        Grid.Row="0"                
+        Margin="15,0,0,0"
+        HorizontalAlignment="Left"
+        FontSize="15"
+        FontWeight="Bold"
+        Foreground="#2B579A"
+        Text="Create Unit" />
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="10">
+
+            <GroupBox >
+                <GroupBox.Header>Unit Information</GroupBox.Header>
+                <StackPanel Margin="0,0,200,0">
+
+
+                    <!--<ItemsControl Name-->
+                    <Grid Margin="1,10,10,0" >
+
+                        <TextBlock
+                     Margin="10,0,0,0"
+                     VerticalAlignment="Center"
+                     Foreground="#666666"
+                     HorizontalAlignment="Left"            
+                     Text="Name" 
+                     Width="90" />
+
+                        <TextBox
+                
+                 Height="25"
+                 Background="#FAFAFA"
+                 BorderBrush="#C0C0C0"
+                 
+                     Margin="129,0,0,0" />
+
+
+                    </Grid>
+
+                    <!-- UQC-->
+                    <Grid Margin="1,10,10,0" >
+
+                        <TextBlock
+                     Margin="10,0,0,0"
+                     VerticalAlignment="Center"
+                     Foreground="#666666"
+                     HorizontalAlignment="Left"            
+                     Text="UQC"
+                     Width="90" />
+
+                        <ComboBox
+                            x:Name="UnitQuantityCode"
+                            Height="25"
+                            Background="#FAFAFA"
+                            BorderBrush="#C0C0C0"
+                            Margin="128,0,0,0"/>
+
+
+                    </Grid>
+
+                    <!-- Number of decimal -->
+                    <Grid Margin="1,10,10,0" >
+
+                        <TextBlock
+                             Margin="10,0,0,0"
+                             VerticalAlignment="Center"
+                             Foreground="#666666"
+                             HorizontalAlignment="Left"            
+                             Text="Number of decimal"
+                             Width="110" />
+
+                        <TextBox
+    
+                         Height="25"
+                         Background="#FAFAFA"
+                         BorderBrush="#C0C0C0"     
+                         Margin="129,0,0,0" />
+
+
+                    </Grid>
+
+                
+
+                   
+
+
+                </StackPanel>
+            </GroupBox>
+
+
+        </Grid>
+
+
+
+        <Button    
+            Grid.Row="2"
+            Grid.Column="1"
+            Width="120"
+            Height="40"
+            Margin="0,10,0,0"
+            HorizontalAlignment="Right"
+            Background="#2B579A"
+            BorderBrush="Transparent"
+    
+            Content="SAVE"
+            FontWeight="Bold"
+            Foreground="White" />
+    </Grid>
+</Page>

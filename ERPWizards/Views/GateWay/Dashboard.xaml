@@ -1,0 +1,208 @@
+﻿<Window
+    x:Class="ERPWizards.Views.Dashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="ERP Wizards Gateway"
+    MinWidth="1280"
+    MinHeight="720"
+    Background="#F6F6F6"
+    ResizeMode="CanResize"
+    WindowStartupLocation="CenterScreen">
+
+    <DockPanel>
+        <!--  Menu Bar  -->
+        <Menu
+            x:Name="MenuBar"
+            Background="#555555"
+            DockPanel.Dock="Top"
+            Foreground="White">
+            <MenuItem
+                x:Name="HomeMenuItem"
+                Foreground="White"
+                Header="Company">
+                <MenuItem
+                    x:Name="ModifyCompanyMenuItem"
+                    Click="ModifyCompanyMenuItem_Click"
+                    Foreground="Black"
+                    Header="Modify Company" />
+                <MenuItem
+                    x:Name="CloseCompanyMenuItem"
+                    Click="CloseCompanyMenuItem_Click"
+                    Foreground="Black"
+                    Header="Close Company" />
+            </MenuItem>
+            <!--  Masters  -->
+            <MenuItem
+                x:Name="LedgerMenuItem"
+                Foreground="White"
+                Header="Masters">
+
+                <MenuItem
+                    x:Name="ViewLedgerMenuItem"
+                    Click="ViewLedgerMenuItem_Click"
+                    Foreground="Black"
+                    Header="Ledger" />
+
+                <MenuItem
+                    x:Name="ViewLedgerGroupMenuItem"
+                    Click="ViewLedgerMenuItem_Click"
+                    Foreground="Black"
+                    Header="Ledger Group" />
+
+
+
+                <MenuItem
+                    x:Name="ItemMenuGroupItem"
+                    Click="ItemMenuGroupItem_Click"
+                    Foreground="Black"
+                    Header="Item " />
+
+                <MenuItem
+                    x:Name="UnitMenuGroupItem"
+                    Click="UnitMenuGroupItem_Click"
+                    Foreground="Black"
+                    Header="Unit " />
+
+
+                <MenuItem
+                    x:Name="ExportLedgerMenuItem"
+                    Foreground="Black"
+                    Header="Export Ledger" />
+            </MenuItem>
+
+            <MenuItem
+                x:Name="ProfileMenuItem"
+                Foreground="White"
+                Header="Transactions">
+                <MenuItem
+                    x:Name="SaleVoucherMenuItem"
+                    Click="SaleVoucherMenuItem_Click"
+                    Foreground="Black"
+                    Header="Sale">
+                    <MenuItem Foreground="Black" Header="New Sales" />
+                    <MenuItem Foreground="Black" Header="List of Sales" />
+                </MenuItem>
+
+
+                <MenuItem
+                    x:Name="PurchaseVoucherMenuItem"
+                    Click="PurchaseVoucherMenuItem_Click"
+                    Foreground="Black"
+                    Header="Purchase" />
+
+                <MenuItem
+                    x:Name="DayBookMenuItem"
+                    Click="DayBookMenuItem_Click"
+                    Foreground="Black"
+                    Header="Day Book" />
+
+
+
+            </MenuItem>
+            <MenuItem
+                x:Name="Display"
+                Foreground="White"
+                Header="Display">
+                <MenuItem
+                    x:Name="Stock"
+                    Click="Stock_Click"
+                    Foreground="Black"
+                    Header="Stock" />
+
+            </MenuItem>
+            <MenuItem
+                x:Name="SettingsMenuItem"
+                Foreground="White"
+                Header="Settings">
+                <MenuItem
+                    x:Name="PreferencesMenuItem"
+                    Foreground="Black"
+                    Header="Preferences" />
+                <MenuItem
+                    x:Name="AccountSettingsMenuItem"
+                    Foreground="Black"
+                    Header="Account Settings" />
+            </MenuItem>
+            <MenuItem
+                x:Name="LogoutMenuItem"
+                Foreground="#FF7B7B"
+                Header="Log Out" />
+        </Menu>
+
+        <!--  Top Bar  -->
+        <Grid
+            x:Name="TopBarGrid"
+            Height="50"
+            DockPanel.Dock="Top">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="83*" />
+                <ColumnDefinition Width="1197*" />
+            </Grid.ColumnDefinitions>
+            <Rectangle
+                x:Name="TopBarBackground"
+                Grid.ColumnSpan="2"
+                Fill="#555555" />
+            <TextBlock
+                x:Name="TopBarTitle"
+                Grid.Column="1"
+                Margin="557,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="18"
+                FontWeight="Bold"
+                Foreground="White" />
+        </Grid>
+
+        <!--  Main Content with TreeView  -->
+        <Grid x:Name="MainContentGrid" Margin="10">
+            <Grid.ColumnDefinitions>
+                <!--
+                <ColumnDefinition Width="0" />
+                 TreeView Column-->
+
+                <ColumnDefinition Width="*" />
+                <!--  Main Content Column  -->
+            </Grid.ColumnDefinitions>
+
+            <!--  Foldable TreeView  -->
+
+            <!--
+            <Border
+                Margin="5"
+                Background="White"
+                CornerRadius="5">
+                <TreeView x:Name="NavigationTreeView" Margin="5">
+                    <TreeViewItem Header="Sales" IsExpanded="True">
+                        <TreeViewItem Header="Sale Invoice" />
+                        <TreeViewItem Header="Sale Orders" />
+                        <TreeViewItem Header="Delivery Note" />
+                        <TreeViewItem Header="Return Request" />
+                        <TreeViewItem Header="Return" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="Purchase">
+                        <TreeViewItem Header="Purchase Order" />
+                        <TreeViewItem Header="Goods Receipt PO" />
+                        <TreeViewItem Header="Goods Return Request" />
+                        <TreeViewItem Header="Good Return" />
+                        <TreeViewItem Header="Return" />
+                    </TreeViewItem>
+                    <TreeViewItem Header="Inventory">
+                        <TreeViewItem Header="Item Master" />
+                        <TreeViewItem Header="Stock Query" />
+                    </TreeViewItem>
+                </TreeView>
+            </Border>
+            -->
+
+            <!--  Main Content  -->
+            <!--  Main Content  -->
+            <Border
+                Grid.Column="1"
+                Background="White"
+                CornerRadius="10">
+                <Frame x:Name="MainContentFrame" NavigationUIVisibility="Hidden" />
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>
+
